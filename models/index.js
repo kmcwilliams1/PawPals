@@ -7,7 +7,21 @@ User.hasMany(Status, {
   onDelete: 'CASCADE'
 });
 
+User.hasMany(Comment, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+})
+
+Status.hasMany(Comment, {
+  foreignKey: 'status_id',
+  onDelete: 'CASCADE'
+})
+
 Status.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+Comment.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
