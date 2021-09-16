@@ -2,10 +2,9 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#user-name').value.trim();
-  const img = document.querySelector('#user-image').value.trim();
   const email = document.querySelector('#user-email').value.trim();
 
-  if (name && img && email) {
+  if (name && email) {
     const response = await fetch(`/api/user`, {
       method: 'POST',
       body: JSON.stringify({ name, img, email }),
@@ -24,7 +23,7 @@ const newFormHandler = async (event) => {
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+    const id = event.target.getAttribute('data-id');  
 
     const response = await fetch(`/api/user/${id}`, {
       method: 'DELETE',

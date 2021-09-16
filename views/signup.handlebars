@@ -1,10 +1,12 @@
-<div class="col-md-6">
-    <h2>Signup</h2>
-
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+        </a>
     <form class="form signup-form">
       <div class="form-group">
         <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
+        <input class="form-input" type="text" id="email-signup" />
       </div>
       <div class="form-group">
         <label for="email-signup">email:</label>
@@ -14,12 +16,21 @@
         <label for="password-signup">password:</label>
         <input class="form-input" type="password" id="password-signup" />
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="signUp button is-light" href="/signup" type="submit">
+              Sign up!
+            </a>
+            <a class="logIn button is-light" href="/login" type="submit">
+              Log in
+            </a>
+          </div>
+        </div>
       </div>
-      <a href="/login">Login</a>
     </form>
   </div>
-</div>
 
 <script src="./js/signup.js"></script>
+
+
