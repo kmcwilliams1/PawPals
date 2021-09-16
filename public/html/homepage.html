@@ -27,10 +27,10 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-primary">
+                        <a class="placeholderClassName is-primary">
                             <strong>Sign up</strong>
                         </a>
-                        <a class="button is-light">
+                        <a class="placeholderClassName is-light">
                             Log in
                         </a>
                     </div>
@@ -66,7 +66,7 @@
                   </div>
               
                   <div class="content">
-    {{bio}} <a>@bulmaio</a>.
+                    {{bio}} <a>@bulmaio</a>.
                     <a href="#">#css</a> <a href="#">#responsive</a>
                     <br>
                     <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
@@ -165,9 +165,10 @@
     </div>
 <!-- ending reading status -->
 
-<!-- modal -->
+<!-- bio modal -->
+
 <button class="edit">Button</button>
-<div class="modal">
+<div class="bioModal modal">
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
@@ -178,7 +179,7 @@
       <!-- Any other Bulma elements you want -->
       <textarea class="textarea" placeholder="Age"></textarea>
       <textarea class="textarea" placeholder="Breed"></textarea>
-      <textarea class="textarea" placeholder="Location"></textarea>
+      <textarea class="textarea" placeholder="Favorite Toys"></textarea>
       <textarea class="textarea" placeholder="A Short Bio"></textarea>
       </div>
     <footer class="modal-card-foot">
@@ -187,7 +188,32 @@
     </footer>
   </div>
 </div>
-<!-- end modal -->
+
+<!-- end bio modal -->
+<!--log in modal -->
+
+<!-- 
+<div class="logInModal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Log In</p>
+      <button class="delete" aria-label="close"></button>
+    </header> -->
+      <!-- <div class="modal-content"> -->
+      <!-- Any other Bulma elements you want -->
+      <!-- <textarea class="textarea" placeholder="Email / Username"></textarea>
+      <textarea class="textarea" placeholder="Password"></textarea>  -->
+      <!-- how to make password show up as bullet points? -->
+      <!-- </div>
+    <footer class="modal-card-foot">
+      <button class="modal-save is-success">Save changes</button>
+      <button class="modal-cancel">Cancel</button>
+    </footer>
+  </div>
+</div> -->
+
+<!-- end log in modal  -->
 
 <script src="../js/index.js"></script>
 </body>
