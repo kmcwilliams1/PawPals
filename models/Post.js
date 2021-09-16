@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Status extends Model {}
+class Post extends Model {}
 
 // Might need to be renamed to Gallery
-Status.init(
+Post.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -37,4 +37,4 @@ Status.init(
   }
 );
 
-module.exports = Status;
+module.exports = Post;
