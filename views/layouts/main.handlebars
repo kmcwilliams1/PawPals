@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -15,9 +16,9 @@
       <nav>
         <h1>
           <!-- Conditionally render login or logout links -->
-          <a href="/">Home</a> 
+          <a href="/">Home</a>
           {{#if logged_in}}
-          <a href="/dashboard">Dashboard</a> 
+          <a href="/dashboard">Dashboard</a>
           <button class="no-button" id="logout"><a>logout</a></button>
           {{else}}
           <a href="/login">Login</a>
@@ -30,7 +31,6 @@
       {{{ body }}}
     </main>
     <footer>
-      
     </footer>
   </div>
 
@@ -38,6 +38,6 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  <script src="/js/index.js"></script>
 </body>
-
 </html>

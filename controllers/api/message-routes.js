@@ -1,19 +1,18 @@
 const router = require('express').Router();
-const { Comment } = require('../models/');
+const {Messages} = require('../models')
 const withAuth = require('../../utils/auth');
 
 
 router.get('/:id', async (req, res) =>{
-  //  user bio, 
-    const commentData = await Comment.findOne(
+    const messageData = await Message.findOne(
       {where: {
         id: req.params.id
     }},
     ).catch((err) => { 
       res.json(err);
     });
-    const comments = commentData.map((comment) => comment.get({ plain: true }));
-    res.render('dashboard', { comments });
+    const messages = messageData.map((message) => message.get({ plain: true }));
+    res.render('dashboard', { messages });
     });
 
 
@@ -21,10 +20,10 @@ router.get('/:id', async (req, res) =>{
 router.post('/', async (req, res) => {
   // create a new message
   try {
-    const commentData = await Comment.create({
+    const messageData = await Message.create({
         id: req.params.id
     });
-    res.status(200).json(commentData);
+    res.status(200).json(messageData);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -33,12 +32,12 @@ router.post('/', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     // delete message by its `id` value
     try{
-      const commentData = await Comment.destroy({
+      const messageData = await Message.destroy({
         where: {
           id: req.params.id
         },
       })
-      res.status(200).json(commentData);
+      res.status(200).json(messageData);
     } catch (err) {
       res.status(500).json(err);
     }
