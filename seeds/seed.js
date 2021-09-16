@@ -15,9 +15,9 @@ const seedDatabase = async () => {
   });
 
   //need to replace variable names and class name
-  for (const status of postData) {
-    await Status.create({
-      ...status,
+  for (const post of postData) {
+    await Post.create({
+      ...post,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }

@@ -1,79 +1,48 @@
 <!-- this is their profile -->
 <div class="columns mt-4 ml-1">
-    <div class="column is-one-third my-9">
-        <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                </figure>
-            </div>
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4">John Smith</p>
-                        <p class="subtitle is-6">@johnsmith</p>
-                    </div>
-                </div>
-
-                <div class="content">
-                    {{bio}}
-                </div>
-
-            </div>
-        </div>
-    </div>
-
- <!-- this is reading their status -->
-    <div class="column is-two-third">
-      <article class="media">
-        <figure class="media-left">
-          <p class="image is-64x64">
-            <img src={{user.image}}>
-          </p>
+  <div class="column is-one-third my-9">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
         </figure>
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <strong>{{user.username}}</strong>
-              <br>
-              {{user.message}}
-              <br>
-            </p>
-          </div>
-
-
-    {{#each post.commenta as |comment|}}
-    {{> painting-details}}
-    {{/each}}
-          <article class="media">
-            <figure class="media-left">
-              <p class="image is-48x48">
-  <img src="/user/{{user.image}}" alt="{{user.username}}">              </p>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+            <img src="/user/{{user.image}}" alt="{{user.username}}">
             </figure>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <strong>{{user.username}}</strong>
-                  <br>
-                  Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi tristique senectus
-                  et netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a nulla sagittis, a lobortis leo
-                  feugiat.
-                  <br>
-                  <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
-                </p>
-              </div>
-            </div>
-          </article>
+          </div>
+          <div class="media-content">
+            <p class="title is-4">{{user.username}}</p>
+            <p class="subtitle is-6">{{user.id}}</p>
+          </div>
+        </div>
 
+        <div class="content">
+          {{bio}}
+        </div>
 
-
-    
-    
+      </div>
     </div>
   </div>
+
+  <!-- this is reading their status -->
+
+        {{#each post as |post|}}
+        {{> post-details}}
+
+        {{#each post.comments as |comment|}}
+        {{> comment-details}}
+
+        {{/each}}
+
+
+
+
+
+
+
+
   <!-- ending reading status -->

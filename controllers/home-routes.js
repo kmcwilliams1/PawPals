@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     ],
     include: [{
             model: Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'date_created'],
+            attributes: ['id', 'body', 'post_id', 'user_id', 'date_created'],
             include: {
                 model: User,
                 attributes: ['username']
@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', { posts });
   } catch (err) {
-    res.post(500).json(err);
+    res.status(500).json(err);
   }
 });
 
@@ -50,7 +50,7 @@ router.get('/post/:id', async (req, res) => {
         },
         {
             model: Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'date_created'],
+            attributes: ['id', 'body', 'post_id', 'user_id', 'date_created'],
             include: {
                 model: User,
                 attributes: ['username']
