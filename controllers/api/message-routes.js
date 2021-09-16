@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Messages} = require('../models')
+const { Message } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -43,6 +43,4 @@ router.delete('/:id', async (req, res) => {
     }
   });
 
-
-router.use('/api', apiRoutes);
 module.exports = router;
