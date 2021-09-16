@@ -1,10 +1,10 @@
 const sequelize = require('../config/connection');
 // different second class may need to be changed 
-const { User, Status } = require('../models');
+const { User, Post, Message, Comment } = require('../models');
 
 const userData = require('./userData.json');
 //will need to change the naming 
-const statusData = require('./statusData.json');
+const postData = require('./postData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -15,7 +15,7 @@ const seedDatabase = async () => {
   });
 
   //need to replace variable names and class name
-  for (const status of statusData) {
+  for (const status of postData) {
     await Status.create({
       ...status,
       user_id: users[Math.floor(Math.random() * users.length)].id,

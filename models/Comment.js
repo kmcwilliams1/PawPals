@@ -27,10 +27,10 @@ Comment.init(
         key: 'id',
       },
     },
-    status_id: {
+    post_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'status',
+        model: 'post',
         key: 'id',
       },
     },
