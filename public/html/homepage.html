@@ -2,219 +2,255 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body class="body mx-1 my-1">
 
-    <section>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="https://bulma.io">
-                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-                </a>
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                    data-target="navbarBasicExample">
-                </a>
-            </div>
-            <div class="is-justify-content-center">
-                <textarea class="search-bar" id="text-box" placeholder="looking for someone?"></textarea>
-            </div>
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="placeholderClassName is-primary">
-                            <strong>Sign up</strong>
-                        </a>
-                        <a class="placeholderClassName is-light">
-                            Log in
-                        </a>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </nav>
-    </section>
+  <section>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        </a>
+      </div>
+      <div class="is-justify-content-center">
+        <textarea class="search-bar" id="text-box" placeholder="looking for someone?"></textarea>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="signUp button is-primary">
+              <strong>Sign up</strong>
+            </a>
+            <a class="logIn button is-light">
+              Log in
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </nav>
+  </section>
 
-    <div class="container">
-        <textarea class="textarea" id="text-box" placeholder="What's on your mind?"></textarea>
-    </div>
-<!-- this is your profile -->
-    <div class="columns mt-4 ml-1">
-        <div class="column is-one-third my-9">
-            <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">John Smith</p>
-                      <p class="subtitle is-6">@johnsmith</p>
-                    </div>
-                  </div>
-              
-                  <div class="content">
-                    {{bio}} <a>@bulmaio</a>.
+  <div class="container">
+    <textarea class="textarea" id="text-box" placeholder="What's on your mind?"></textarea>
+  </div>
+  <!-- this is your profile -->
+  <div class="columns mt-4 ml-1">
+    <div class="column is-one-third my-9">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">John Smith</p>
+              <p class="subtitle is-6">@johnsmith</p>
+            </div>
+          </div>
+
+          <div class="content">
+            {{bio}}
+            <!--    <a>@bulmaio</a>.
                     <a href="#">#css</a> <a href="#">#responsive</a>
                     <br>
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                  </div>
-                </div>
-              </div>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> -->
+          </div>
         </div>
-<!-- ending profile -->
-<!-- this is reading status of others -->
-        <div class="column is-two-third">
+      </div>
+    </div>
+    <!-- ending profile -->
+    <!-- this is reading status of others -->
+    <div class="column is-two-third">
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img src="https://bulma.io/images/placeholders/128x128.png">
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Barbara Middleton</strong>
+              <br>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit
+              non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
+              <br>
+              <small><a>Like</a> · <a>Reply</a> · 3 hrs</small>
+            </p>
+          </div>
+
           <article class="media">
             <figure class="media-left">
-              <p class="image is-64x64">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
+              <p class="image is-48x48">
+                <img src="https://bulma.io/images/placeholders/96x96.png">
               </p>
             </figure>
             <div class="media-content">
               <div class="content">
                 <p>
-                  <strong>Barbara Middleton</strong>
+                  <strong>Sean Brown</strong>
                   <br>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
+                  Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi tristique senectus
+                  et netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a nulla sagittis, a lobortis leo
+                  feugiat.
                   <br>
-                  <small><a>Like</a> · <a>Reply</a> · 3 hrs</small>
+                  <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                 </p>
               </div>
-          
+
               <article class="media">
-                <figure class="media-left">
-                  <p class="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png">
-                  </p>
-                </figure>
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <strong>Sean Brown</strong>
-                      <br>
-                      Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a nulla sagittis, a lobortis leo feugiat.
-                      <br>
-                      <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
-                    </p>
-                  </div>
-          
-                  <article class="media">
-                    Vivamus quis semper metus, non tincidunt dolor. Vivamus in mi eu lorem cursus ullamcorper sit amet nec massa.
-                  </article>
-          
-                  <article class="media">
-                    Morbi vitae diam et purus tincidunt porttitor vel vitae augue. Praesent malesuada metus sed pharetra euismod. Cras tellus odio, tincidunt iaculis diam non, porta aliquet tortor.
-                  </article>
-                </div>
+                Vivamus quis semper metus, non tincidunt dolor. Vivamus in mi eu lorem cursus ullamcorper sit amet nec
+                massa.
               </article>
-          
+
               <article class="media">
-                <figure class="media-left">
-                  <p class="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png">
-                  </p>
-                </figure>
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <strong>Kayli Eunice </strong>
-                      <br>
-                      Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis sit amet magna vestibulum euismod malesuada cursus libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
-                      <br>
-                      <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
-                    </p>
-                  </div>
-                </div>
+                Morbi vitae diam et purus tincidunt porttitor vel vitae augue. Praesent malesuada metus sed pharetra
+                euismod. Cras tellus odio, tincidunt iaculis diam non, porta aliquet tortor.
               </article>
             </div>
           </article>
-          
+
           <article class="media">
             <figure class="media-left">
-              <p class="image is-64x64">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
+              <p class="image is-48x48">
+                <img src="https://bulma.io/images/placeholders/96x96.png">
               </p>
             </figure>
             <div class="media-content">
-              <div class="field">
-                <p class="control">
-                  <textarea class="textarea" placeholder="Add a comment..."></textarea>
-                </p>
-              </div>
-              <div class="field">
-                <p class="control">
-                  <button class="button">Post comment</button>
+              <div class="content">
+                <p>
+                  <strong>Kayli Eunice </strong>
+                  <br>
+                  Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis sit amet magna
+                  vestibulum euismod malesuada cursus libero. Vestibulum ante ipsum primis in faucibus orci luctus et
+                  ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
+                  <br>
+                  <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                 </p>
               </div>
             </div>
           </article>
         </div>
+      </article>
+
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img src="https://bulma.io/images/placeholders/128x128.png">
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="field">
+            <p class="control">
+              <textarea class="textarea" placeholder="Add a comment..."></textarea>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control">
+              <button class="button">Post comment</button>
+            </p>
+          </div>
+        </div>
+      </article>
     </div>
-<!-- ending reading status -->
+  </div>
+  <!-- ending reading status -->
 
-<!-- bio modal -->
+  <!-- bio modal -->
 
-<button class="edit">Button</button>
-<div class="bioModal modal">
-  <div class="modal-background"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Edit Profile</p>
-      <button class="delete" aria-label="close"></button>
-    </header>
+  <button class="edit">Button</button>
+  <div class="bioModal modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Edit Profile</p>
+        <button class="biodelete delete" aria-label="close"></button>
+      </header>
       <div class="modal-content">
-      <!-- Any other Bulma elements you want -->
-      <textarea class="textarea" placeholder="Age"></textarea>
-      <textarea class="textarea" placeholder="Breed"></textarea>
-      <textarea class="textarea" placeholder="Favorite Toys"></textarea>
-      <textarea class="textarea" placeholder="A Short Bio"></textarea>
+        <!-- Any other Bulma elements you want -->
+        <textarea class="textarea" placeholder="Age"></textarea>
+        <textarea class="textarea" placeholder="Breed"></textarea>
+        <textarea class="textarea" placeholder="Favorite Toys"></textarea>
+        <textarea class="textarea" placeholder="A Short Bio"></textarea>
       </div>
-    <footer class="modal-card-foot">
-      <button class="modal-save is-success">Save changes</button>
-      <button class="modal-cancel">Cancel</button>
-    </footer>
+      <footer class="modal-card-foot">
+        <button class="bio-modal-save is-success">Save changes</button>
+        <button class="bio-modal-cancel">Cancel</button>
+      </footer>
+    </div>
   </div>
-</div>
 
-<!-- end bio modal -->
-<!--log in modal -->
+  <!-- end bio modal -->
+  <!--log in modal -->
 
-<!-- 
-<div class="logInModal">
-  <div class="modal-background"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Log In</p>
-      <button class="delete" aria-label="close"></button>
-    </header> -->
-      <!-- <div class="modal-content"> -->
-      <!-- Any other Bulma elements you want -->
-      <!-- <textarea class="textarea" placeholder="Email / Username"></textarea>
-      <textarea class="textarea" placeholder="Password"></textarea>  -->
-      <!-- how to make password show up as bullet points? -->
-      <!-- </div>
-    <footer class="modal-card-foot">
-      <button class="modal-save is-success">Save changes</button>
-      <button class="modal-cancel">Cancel</button>
-    </footer>
+
+  <div class="logInModal modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Log In</p>
+        <button class="logIndelete delete" aria-label="close"></button>
+      </header>
+      <div class="modal-content">
+        <!-- Any other Bulma elements you want -->
+        <textarea class="textarea" placeholder="Email / Username"></textarea>
+        <textarea class="textarea" placeholder="Password"></textarea>
+        <!-- how to make password show up as bullet points? -->
+      </div>
+      <footer class="modal-card-foot">
+        <button class="logInmodal-save is-success">Save changes</button>
+        <button class="logInmodal-cancel">Cancel</button>
+      </footer>
+    </div>
   </div>
-</div> -->
 
-<!-- end log in modal  -->
+  <!-- end log in modal  -->
 
-<script src="../js/index.js"></script>
+   <!--sign up modal -->
+
+
+   <div class="signUpModal modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Sign Up</p>
+        <button class="signUpdelete delete" aria-label="close"></button>
+      </header>
+      <div class="modal-content">
+        <!-- Any other Bulma elements you want -->
+        <textarea class="textarea" placeholder="Email"></textarea>
+        <textarea class="textarea" placeholder="Username"></textarea>
+        <textarea class="textarea" placeholder="Password "></textarea>
+        <textarea class="textarea" placeholder="Confirm Password"></textarea>
+        <!-- how to make password show up as bullet points? -->
+      </div>
+      <footer class="modal-card-foot">
+        <button class="signUpmodal-save is-success">Save changes</button>
+        <button class="signUpmodal-cancel">Cancel</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- end sign up modal  -->
+
+   
+  <script src="../js/index.js"></script>
 </body>
+
 </html>
