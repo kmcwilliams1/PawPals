@@ -33,7 +33,7 @@ Post.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'status',
+    modelName: 'post',
   }
 );
 

@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { User, Status, Comment } = require('../models/');
+const { User, Post, Comment } = require('../models/');
 
 // get all posts for homepage
 router.get('/', async (req, res) => {
   try {
-    const statusData = await Status.findAll({
+    const postData = await Post.findAll({
       attributes: [
         'id',
         'description',
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     ],
     include: [{
             model: Comment,
-            attributes: ['id', 'comment_text', 'status_id', 'user_id', 'date_created'],
+            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'date_created'],
             include: {
                 model: User,
                 attributes: ['username']
@@ -25,18 +25,18 @@ router.get('/', async (req, res) => {
     ]
     });
 
-    const posts = statusData.map((post) => post.get({ plain: true }));
+    const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render('homepage', { posts });
   } catch (err) {
-    res.status(500).json(err);
+    res.post(500).json(err);
   }
 });
 
 // get single post
-router.get('/status/:id', async (req, res) => {
+router.get('/post/:id', async (req, res) => {
   try {
-    const statusData = await Status.findByPk(req.params.id, {
+    const postData = await Post.findByPk(req.params.id, {
     where: {
         id: req.params.id
     },
@@ -50,7 +50,7 @@ router.get('/status/:id', async (req, res) => {
         },
         {
             model: Comment,
-            attributes: ['id', 'comment_text', 'status_id', 'user_id', 'date_created'],
+            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'date_created'],
             include: {
                 model: User,
                 attributes: ['username']
@@ -58,15 +58,15 @@ router.get('/status/:id', async (req, res) => {
         }]
     });
 
-    if (statusData) {
-      const status = statusData.get({ plain: true });
+    if (postData) {
+      const post = postData.get({ plain: true });
 
       res.render('single-post', { post });  // handlebars
     } else {
-      res.status(404).end();
+      res.post(404).end();
     }
   } catch (err) {
-    res.status(500).json(err);
+    res.post(500).json(err);
   }
 });
 
