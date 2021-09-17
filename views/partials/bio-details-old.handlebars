@@ -1,4 +1,4 @@
-<div class="columns is-justify-content-center">
+<div class="columns mt-4 ml-1">
   <div class="column is-one-third my-9">
     <div class="card">
       <div class="card-image">
@@ -14,19 +14,19 @@
             </figure>
           </div>
           <div class="media-content">
-            <p class="title is-4">John Smith</p>
-            <p class="subtitle is-6">@johnsmith</p>
+            <p class="title is-4">{{posts.user.username}}</p>
+            {{log posts}}
+            <p class="subtitle is-6">{{posts.id}}</p>
           </div>
         </div>
 
         <div class="content">
-          {{bio}}
+          <section class="card">
+            <a href="/user/{{posts.id}}">
+              <header>{{posts.description}}</header>
+              <div class="card-body">
+                {{!-- <img src="/images/{{filename}}" alt="{{description}}"> --}}
+              </div>
+            </a>
+          </section>
         </div>
-        <!-- bio modal -->
-        <button class="edit">Button</button>
-        <!-- end bio modal -->
-      </div>
-    </div>
-  </div>
-</div>
-  <!-- ending profile -->

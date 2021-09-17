@@ -1,25 +1,86 @@
 
 
-{{> bio-details posts = posts}}
+<div class="container">
+  <textarea class="textarea" id="text-box" placeholder="What's on your mind?"></textarea>
+</div>
 
-
-<!-- Loop over each object in the blogs array -->
-{{#each posts as |post| }}
-
+{{!-- {{#each posts as |post| }}
 {{> post-details}}
+{{/each}} --}}
 
-{{!-- <div class="row mb-4 blog">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      <a href="/post/{{post.id}}">{{post.user.username}}</a>
-    </h2>
-    <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{post.description}}
-    </p>
-  </div>
-</div> --}}
+
+<!-- this is your profile -->
+{{> bio-details}}
+<!-- this is reading status of others -->
+{{#each posts as |post|}}
+{{> post-details}}
 {{/each}}
+
+
+<!--log in modal -->
+<div class="logInModal modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Log In</p>
+      <button class="logIndelete delete" aria-label="close"></button>
+    </header>
+    <div class="modal-content">
+      <!-- Any other Bulma elements you want -->
+      <textarea class="textarea" placeholder="Email / Username"></textarea>
+      <textarea class="textarea" placeholder="Password"></textarea>
+      <!-- how to make password show up as bullet points? -->
+    </div>
+    <footer class="modal-card-foot">
+      <button class="logInmodal-save is-success">Save changes</button>
+      <button class="logInmodal-cancel">Cancel</button>
+    </footer>
+  </div>
+</div>
+<!-- end log in modal  -->
+
+
+<!--sign up modal -->
+<div class="signUpModal modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Sign Up</p>
+      <button class="signUpdelete delete" aria-label="close"></button>
+    </header>
+    <div class="modal-content">
+      <!-- Any other Bulma elements you want -->
+      <textarea class="textarea" placeholder="Email"></textarea>
+      <textarea class="textarea" placeholder="Username"></textarea>
+      <textarea class="textarea" placeholder="Password "></textarea>
+      <textarea class="textarea" placeholder="Confirm Password"></textarea>
+      <!-- how to make password show up as bullet points? -->
+    </div>
+    <footer class="modal-card-foot">
+      <button class="signUpmodal-save is-success">Save changes</button>
+      <button class="signUpmodal-cancel">Cancel</button>
+    </footer>
+  </div>
+</div>
+<!-- end sign up modal  -->
+
+<div class="bioModal modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Edit Profile</p>
+      <button class="biodelete delete" aria-label="close"></button>
+    </header>
+    <div class="modal-content">
+      <!-- Any other Bulma elements you want -->
+      <textarea class="textarea" placeholder="Age"></textarea>
+      <textarea class="textarea" placeholder="Breed"></textarea>
+      <textarea class="textarea" placeholder="Favorite Toys"></textarea>
+      <textarea class="textarea" placeholder="A Short Bio"></textarea>
+    </div>
+    <footer class="modal-card-foot">
+      <button class="bio-modal-save is-success">Save changes</button>
+      <button class="bio-modal-cancel">Cancel</button>
+    </footer>
+  </div>
+</div>

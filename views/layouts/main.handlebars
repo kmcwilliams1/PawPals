@@ -9,9 +9,8 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+<div class="flex-column justify-space-around">
+  <header class="display-flex justify-space-between align-center p-2">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
@@ -37,22 +36,19 @@
           </h1>
         </div>
       </div>
-      </div>
     </nav>
-    </header>
+  </header>
+</div>
+
+<body>
 
 
-  <div class="container">
-    <textarea class="textarea" id="text-box" placeholder="What's on your mind?"></textarea>
-  </div>
+  <main class="container container-fluid mt-5">
+    <!-- Render the sub layout -->
 
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-    </footer>
-  </div>
+    {{{ body }}}
+
+  </main>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
@@ -60,4 +56,5 @@
   {{/if}}
   <script src="/js/index.js"></script>
 </body>
+
 </html>

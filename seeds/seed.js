@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
 // different second class may need to be changed 
 const { User, Post, Message, Comment } = require('../models');
-
+const commentData = require('./commentData.json');
 const userData = require('./userData.json');
 //will need to change the naming 
 const postData = require('./postData.json');
@@ -13,14 +13,14 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
-
-  //need to replace variable names and class name
-  for (const post of postData) {
-    await Post.create({
-      ...post,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+  const post = await Post.bulkCreate(postData, {
+    individualHooks: true,
+    returning: true,
+  });
+  const comment = await Comment.bulkCreate(commentData, {
+    individualHooks: true,
+    returning: true,
+  });
 
   process.exit(0);
 };
