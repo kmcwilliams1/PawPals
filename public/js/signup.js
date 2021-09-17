@@ -14,7 +14,7 @@ const signupFormHandler = async (event) => {
   
       if (response.ok) {
           //Might need to replace Dashboard
-        document.location.replace('/dashboard');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }

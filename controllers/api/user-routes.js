@@ -69,4 +69,26 @@ router.post('/logout', (req, res) => {
   }
 });
 
+
+//update bio
+router.put('/bio', async (req, res) =>{
+  try {    
+    const dbUserData = await User.findOne({
+    where: {
+     id: req.session.userId,
+    },
+  });
+
+  const userBio = await User.update(req.body.bio , {
+    where: {
+      id : dbUserData.id
+    }
+  });
+console.log(userBio)
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
 module.exports = router;
