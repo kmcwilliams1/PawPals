@@ -13,7 +13,11 @@ router.get('/', async (req, res) => {
         'date_created'
       ],
       include: [
-        Comment,
+        {
+          model: Comment, include: [
+            User
+          ]
+        },
         User
       ]
     }

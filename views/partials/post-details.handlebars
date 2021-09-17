@@ -1,27 +1,42 @@
+<div>
+    <article class="media">
+        <figure class="media-left">
+            <p class="image is-64x64">
+                <img src="https://bulma.io/images/placeholders/128x128.png">
+            </p>
+        </figure>
+        <div class="media-content">
+            <div class="content">
+                <p>
+                    <strong>{{user_id}}Name</strong>
+                    <br>
+                    {{description}} Post
+                    <br>
+                </p>
+            </div>
+            {{#each comments as |comment|}}
+            {{> comment-details}}
+            {{/each}}
+        </div>
+    </article>
 
-<div class="column is-two-third">
-  <article class="media">
-    <figure class="media-left">
-      <p class="image is-64x64">
-        <img src="/user/{{user.image}}" alt="{{user.username}}">
-      </p>
-    </figure>
-    <div class="media-content">
-      <div class="content">
-        <p>{{#each users as |user| }}
-        <p>Created by {{user.name}} on {{format_date date_created}}</p>
-        <br>{{/each}}
-        <p>
-          {{description}}
-        </p>
-        <br>
-        </p>
-      </div>
-      {{!-- <div>
-        {{#each comments as |comment|}}
-        {{> comment-details}}
-        {{/each}}
-      </div> --}}
-    </div>
-  </article>
+    <article class="media">
+        <figure class="media-left">
+            <p class="image is-64x64">
+                <img src="https://bulma.io/images/placeholders/128x128.png">
+            </p>
+        </figure>
+        <div class="media-content">
+            <div class="field">
+                <p class="control">
+                    <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <button class="button">Post comment</button>
+                </p>
+            </div>
+        </div>
+    </article>
 </div>

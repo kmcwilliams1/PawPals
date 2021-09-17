@@ -9,8 +9,20 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-        <div class="navbar-end">
+<div class="flex-column justify-space-around">
+  <header class="display-flex justify-space-between align-center p-2">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        </a>
+      </div>
+      <div class="is-justify-content-center">
+        <textarea class="search-bar" id="text-box" placeholder="looking for someone?"></textarea>
+      </div>
+      <div class="navbar-end">
         <div class="navbar-item">
           <h1>
             <!-- Conditionally render login or logout links -->
@@ -24,15 +36,19 @@
           </h1>
         </div>
       </div>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
+    </nav>
+  </header>
+</div>
 
-      {{{ body }}}
-      
-    </main>
-    <footer>
-    </footer>
- 
+<body>
+
+
+  <main class="container container-fluid mt-5">
+    <!-- Render the sub layout -->
+
+    {{{ body }}}
+
+  </main>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
@@ -40,4 +56,5 @@
   {{/if}}
   <script src="/js/index.js"></script>
 </body>
+
 </html>
