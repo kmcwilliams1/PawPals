@@ -3,6 +3,7 @@ const { User } = require('../../models');
 
 // Sign up
 router.post('/', async (req, res) => {
+  console.log("this is a test of the signup route")
   try {
     const userData = await User.create(req.body);
 
@@ -13,12 +14,14 @@ router.post('/', async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
 
 // Login
 router.post('/login', async (req, res) => {
+  console.log("this is a test of the login route ")
   try {
     const dbUserData = await User.findOne({
       where: {

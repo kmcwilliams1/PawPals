@@ -9,11 +9,3 @@ router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 
 module.exports = router;
-
-
-
-router.use((req, res) => {
-  res.send("Wrong Route!")
-});
-
-module.exports = router;
