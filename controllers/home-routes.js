@@ -10,23 +10,14 @@ router.get('/', async (req, res) => {
         'description',
         'date_created'
     ],
-    include: [{
-            model: Comment,
-            attributes: ['id', 'body', 'post_id', 'user_id', 'date_created'],
-            include: {
-                model: User,
-                attributes: ['username']
-            }
-        },
-        {
-            model: User,
-            attributes: ['username']
-        }
-    ]
-    });
+    include: [
+            Comment,   
+              User
+    ]}
+    );
 
     const posts = postData.map((post) => post.get({ plain: true }));
-
+console.log(posts)
     res.render('homepage', { posts });
   } catch (err) {
     res.status(500).json(err);
