@@ -14,8 +14,7 @@
             </figure>
           </div>
           <div class="media-content">
-            <p class="title is-4">John Smith</p>
-            <p class="subtitle is-6">@johnsmith</p>
+            <p class="title is-4"><a href = "/user/{{user.id}}">{{user.username}}uijyhytgn</a></p>
           </div>
         </div>
 
@@ -23,10 +22,30 @@
           {{bio}}
         </div>
         <!-- bio modal -->
-        <button class="edit" type="submit">Button</button>
+        <button class="editBio" type="submit">Edit Bio</button>
+        <div class="bioModal modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Edit Profile</p>
+              <button class="biodelete delete" aria-label="close"></button>
+            </header>
+            <div class="modal-content">
+              <!-- Any other Bulma elements you want -->
+              <textarea id="age" placeholder="Age"></textarea>
+              <textarea id="breed" placeholder="Breed"></textarea>
+              <textarea id="toys" placeholder="Favorite Toys"></textarea>
+              <textarea id="shortBio" placeholder="A Short Bio"></textarea>
+            </div>
+            <footer class="modal-card-foot">
+              <button class="bio-modal-save is-success">Save changes</button>
+              <button class="bio-modal-cancel">Cancel</button>
+            </footer>
+          </div>
+        </div>
         <!-- end bio modal -->
       </div>
     </div>
   </div>
 </div>
-  <!-- ending profile -->
+<!-- ending profile -->
