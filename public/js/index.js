@@ -1,8 +1,75 @@
-// let bioEditEl = document.querySelector('.edit')
-// let bioModalEl = document.querySelector('.bioModal')
-// let bioModalSaveEl = document.querySelector('.bio-modal-save')
-// let bioModalCancelEl = document.querySelector('.bio-modal-cancel')
-// let bioModalDeleteEl = document.querySelector('.biodelete')
+let bioEditEl = document.querySelector('.edit')
+let bioModalEl = document.querySelector('.bioModal')
+let bioModalSaveEl = document.querySelector('.bio-modal-save')
+let bioModalCancelEl = document.querySelector('.bio-modal-cancel')
+let bioModalDeleteEl = document.querySelector('.biodelete')
+
+
+
+bioEditEl.addEventListener('click', bioModalPop)
+function bioModalPop() {
+    bioModalEl.classList.add('is-active')
+};
+
+
+bioModalSaveEl.addEventListener('click', bioModalSave)
+function bioModalSave() {
+    bioModalEl.classList.remove('is-active')
+
+};
+
+bioModalCancelEl.addEventListener('click', modalDelete)
+function modalDelete() {
+    bioModalEl.classList.remove('is-active')
+};
+
+bioModalDeleteEl.addEventListener('click', modalDelete)
+function modalDelete() {
+    bioModalEl.classList.remove('is-active')
+};
+
+const updateBio = async (event) => {
+    event.preventDefault();
+    let age = document.querySelector("#age").value
+    let breed = document.querySelector("#breed").value
+    let toys = document.querySelector("#toys").value
+    let shortBio = document.querySelector("#shortBio").value
+    const response = await fetch('/api/post', {
+        method: 'POST',
+        body:JSON.stringify ({
+            age,
+            breed,
+            toys,
+            shortBio
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+    
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert(response.statusText);
+      }
+
+};
+
+document.querySelector('.editBio').addEventListener('submit', updateBio);
+
+
+
+// function createbio() {
+//     let bioCard = "";
+//     bioCard += `
+// <ul>
+//     <li>${shortBio}</li>
+//     <li>I am a ${breed}</li>
+//     <li>I am ${age} years old</li>
+//     <li>My favorite toys are ${toys}</li>
+// </ul>
+//       `
+//     return bioCard;
+// }
+
 
 
 // let signUpEl = document.querySelector('.signUp')
@@ -17,31 +84,6 @@
 // let logInModalSaveEl = document.querySelector('.logInmodal-save')
 // let logInModalCancelEl = document.querySelector('.logInmodal-cancel')
 // let logInModalDeleteEl = document.querySelector('.logIndelete')
-
-
-// bioEditEl.addEventListener('click', bioModalPop)
-// function bioModalPop() {
-//     bioModalEl.classList.add('is-active')
-// };
-
-// to save bio edits, will need to .map this and json it
-    // bioModalSaveEl.addEventListener('click', bioModalSave)
-    // function bioModalSave() {
-    //     bioModalEl.classList.remove('is-active')
-        // push to {{bio}}
-    //    add function to push to json
-    // };
-
-    // bioModalCancelEl.addEventListener('click', modalDelete)
-    // function modalDelete() {
-    //     bioModalEl.classList.remove('is-active')
-    // };
-
-    // bioModalDeleteEl.addEventListener('click', modalDelete)
-    // function modalDelete() {
-    //     bioModalEl.classList.remove('is-active')
-    // };
-
 
 
 
@@ -69,7 +111,7 @@
 
 
 
-    
+
 // signUpEl.addEventListener('click', signUpModalPop)
 // function signUpModalPop() {
 //     signUpModalEl.classList.add('is-active')

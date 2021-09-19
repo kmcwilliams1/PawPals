@@ -1,21 +1,21 @@
 [
     {
-        "body": "A mobile app in ur area.",
+        "body": "Woof!.",
         "post_id": 1,
         "user_id": 2
     },
     {
-        "body": "whenever in your area.",
+        "body": "Bark, bark.",
         "post_id": 2,
         "user_id": 3
     },
     {
-        "body": "comment 3.",
+        "body": "grrrrr",
         "post_id": 1,
         "user_id": 3
     },
     {
-        "body": "comment 4.",
+        "body": "When are we going to the dog park again?",
         "post_id": 2,
         "user_id": 3
     }
