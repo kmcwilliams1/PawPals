@@ -3,17 +3,17 @@
 
 
 
- {{#if blogs.length}}
+ {{#if posts.length}}
   <div class="col-md-6 blog-list">
     <h3>Current blogs:</h3>
   {{!-- how to make it only display user.blogs?? --}}
-    {{#each blogs as |blog|}}
+    {{#each posts as |post|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/blog/{{blog.id}}">{{blog.name}}</a></h4>
+        <h4><a href="/post/{{post.id}}">{{post.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}

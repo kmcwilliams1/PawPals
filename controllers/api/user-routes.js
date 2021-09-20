@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User , Post , Comment } = require('../../models');
 
 // Sign up
 router.post('/', async (req, res) => {
@@ -90,5 +90,36 @@ console.log(userBio)
     res.status(500).json(err);
   }
 })
+
+//view dashboard
+router.get('/', async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      where: { user_id: req.session.user_id },
+      attributes: [
+        'id',
+        'description',
+        'date_created'
+      ],
+      include: [
+        {
+          model: Comment, include: [
+            User
+          ]
+        },
+        User
+      ]
+    }
+    );
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts)
+    res.json({posts})
+    // res.render('dashboard', { posts });
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

@@ -28,9 +28,9 @@
           <h1>
             <!-- Conditionally render login or logout links -->
             <a href="/">Home</a>
-            {{#if logged_in}}
-            <a href="/main">Home</a>
-            <button class="no-button" id="logout"><a>logout</a></button>
+            {{#if loggedIn}}
+            <a class="no-button" id="logout">logout</a>
+            
             {{else}}
             <a href="/login">Login/Sign up  </a>
             {{/if}}
@@ -52,7 +52,7 @@
   </main>
 
   <!-- Render script for logged in users only -->
-  {{#if logged_in}}
+  {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
  
