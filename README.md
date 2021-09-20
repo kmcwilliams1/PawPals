@@ -8,7 +8,7 @@
   <h3 align="center">PawPals</h3>
 
   <p align="center">
-    A canine friendly social media platform
+    A canine connection platform
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
@@ -60,9 +60,14 @@ For Project 2, Group 2 will create a social media platform specifically for dogs
 
 ### Built With
 
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+* [Node.js](https://nodejs.org)
+* [Express.js](https://expressjs.com)
+* [RESTfulAPI](https://restfulapi.net)
+* [Handlebars.js](https://handlebarsjs.com)
+* [MySQL](https://www.mysql.com)
+* [Sequelize ORM](https://sequelize.org)
+* [Bulma](https://bulma.io)
+* [Heroku](https://www.heroku.com)
 
 
 
