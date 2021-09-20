@@ -2,16 +2,19 @@
   {
     "username": "Fido",
     "email": "sal@hotmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "image": "/assets/image/dog1.jpg"
   },
   {
     "username": "Sparky",
     "email": "lernantino@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "image": "/assets/image/dog2.jpg"
   },
   {
     "username": "Cupcake",
     "email": "amiko2k20@aol.com",
-    "password": "password12345"
+    "password": "password12345",
+    "image": "/assets/image/dog3.jpg"
   }
 ]

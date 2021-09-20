@@ -59,7 +59,7 @@ router.get('/post/:id', async (req, res) => {
     if (postData) {
       const post = postData.get({ plain: true });
 
-      res.render('single-post', { post });  // handlebars
+      res.render('post', { post });  // handlebars
     } else {
       res.post(404).end();
     }

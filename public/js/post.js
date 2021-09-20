@@ -3,6 +3,7 @@
 
 const post = async (event) => {
     event.preventDefault();
+    console.log("testing the post function")
     let description = document.querySelector("#text-box").value
     console.log(description)
     const response = await fetch('/api/post', {

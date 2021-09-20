@@ -10,6 +10,7 @@ console.log(body)
     const newPost = await Post.create({ ...body, userId: req.session.userId });
     res.json(newPost);
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
