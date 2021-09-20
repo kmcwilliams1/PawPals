@@ -1,4 +1,4 @@
-let bioEditEl = document.querySelector('.edit')
+let bioEditEl = document.querySelector('.editBio')
 let bioModalEl = document.querySelector('.bioModal')
 let bioModalSaveEl = document.querySelector('.bio-modal-save')
 let bioModalCancelEl = document.querySelector('.bio-modal-cancel')
