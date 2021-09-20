@@ -1,6 +1,3 @@
-
-
-
 const post = async (event) => {
     event.preventDefault();
     console.log("testing the post function")
