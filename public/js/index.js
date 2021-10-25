@@ -2,7 +2,7 @@ let bioEditEl = document.querySelector('.editBio')
 let bioModalEl = document.querySelector('.bioModal')
 let bioModalSaveEl = document.querySelector('.bio-modal-save')
 let bioModalCancelEl = document.querySelector('.bio-modal-cancel')
-let bioModalDeleteEl = document.querySelector('.biodelete')
+let bioModalDeleteEl = document.querySelector('.bioDelete')
 
 
 

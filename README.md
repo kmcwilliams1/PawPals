@@ -62,7 +62,6 @@ For Project 2, Group 2 will create a social media platform specifically for dogs
 
 * [Node.js](https://nodejs.org)
 * [Express.js](https://expressjs.com)
-* [RESTfulAPI](https://restfulapi.net)
 * [Handlebars.js](https://handlebarsjs.com)
 * [MySQL](https://www.mysql.com)
 * [Sequelize ORM](https://sequelize.org)
