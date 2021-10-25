@@ -6,11 +6,12 @@ const { User, Post, Comment } = require('../models/');
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
-      // where: { user_id: req.session.user_id },
+      // where: { userID: req.session.userID },
       attributes: [
         'id',
         'description',
-        'date_created'
+        'date_created',
+        'userID',
       ],
       include: [
         {
@@ -25,7 +26,7 @@ router.get('/', async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts)
-    res.render('homepage', { posts , loggedIn:req.session.loggedIn});
+    res.render('homepage', { posts , logged_in:req.session.logged_in});
   } catch (err) {
     res.status(500).json(err);
   }
@@ -35,12 +36,10 @@ router.get('/', async (req, res) => {
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-      where: {
-        id: req.params.id
-      },
       attributes: ['id',
         'description',
-        'date_created'
+        'date_created',
+        'userID'
       ],
       include: [{
         model: User,
@@ -48,7 +47,7 @@ router.get('/post/:id', async (req, res) => {
       },
       {
         model: Comment,
-        attributes: ['id', 'body', 'post_id', 'user_id', 'date_created'],
+        attributes: ['id', 'body', 'post_id', 'userID', 'date_created'],
         include: {
           model: User,
           attributes: ['username']
@@ -69,7 +68,7 @@ router.get('/post/:id', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
@@ -78,7 +77,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }

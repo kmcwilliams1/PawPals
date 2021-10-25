@@ -20,7 +20,7 @@ Comment.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    user_id: {
+    userID: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
