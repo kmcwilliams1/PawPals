@@ -2,7 +2,7 @@ const comment = async (event) => {
     event.preventDefault();
     let description = document.querySelector(".comment-text-box").value
     console.log(description)
-    const response = await fetch('/api/comment', {
+    const response = await fetch('/api/post', {
         method: 'POST',
         body: JSON.stringify({
             description

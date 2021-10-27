@@ -7,15 +7,125 @@
 
 
 <!-- this is your profile -->
-{{> bio-details}}
+<div class="columns is-justify-content-center">
+  <div class="column is-one-third my-9">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="/assets/images/dog5.jpg" alt src="https://bulma.io/images/placeholders/1280x960.png">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4"><a href = "/api/user/">{{username}}Spike</a></p>
+          </div>
+        </div>
+
+        <div class="content">
+          {{bio}}
+          {{log bio}}
+        </div>
+        <!-- bio modal -->
+        <button class="editBio" type="submit">Edit Bio</button>
+        <div class="bioModal modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Edit Profile</p>
+              <button class="biodelete delete" aria-label="close"></button>
+            </header>
+            <div class="modal-content">
+              <!-- Any other Bulma elements you want -->
+              <textarea id="age" placeholder="Age"></textarea>
+              <textarea id="breed" placeholder="Breed"></textarea>
+              <textarea id="toys" placeholder="Favorite Toys"></textarea>
+              <textarea id="shortBio" placeholder="A Short Bio"></textarea>
+            </div>
+            <footer class="modal-card-foot">
+              <button class="bio-modal-save is-success">Save changes</button>
+              <button class="bio-modal-cancel">Cancel</button>
+            </footer>
+          </div>
+        </div>
+        <!-- end bio modal -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ending profile -->
+
 
 <!-- this is reading status of others -->
-{{#each posts as |post|}}
-{{> post-details post}}
-{{/each}}
+<div>
+  {{#each posts as |post|}}
+  <article class="media">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/128x128.png">
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>{{user.username}}</strong>
+          <br>
+          {{description}}
+          <br>
+        </p>
+      </div>
+
+      {{#each comments as |comment|}}
+      <section class="card">
+        <article class="media">
+          <figure class="media-left">
+            <p class="image is-48x48">
+              <img src="/user/{{image}}" alt="{{userID}}">
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>{{user.username}}</strong>
+              <div class="card-body">
+                <p>{{body}}</p>
+              </div>
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+      {{/each}}
+    </div>
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/128x128.png">
+      </p>
+    </figure>
+    <form class="media-content commentSubmitForm">
+      <div class="field">
+        <p class="control">
+          <textarea class="textarea" class="comment-text-box" placeholder="Add a comment..."></textarea>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <button class="button" type="submit">Post comment</button>
+        </p>
+      </div>
+    </form>
+  </article>
+  {{/each}}
+</div>
 
 
 
-    <script src="/js/index.js"></script>
-
+<script src="/js/index.js"></script>
+<script src="/js/comment.js"></script>
 <script src="/js/post.js"></script>
+<script src="/js/bio.js"></script>
